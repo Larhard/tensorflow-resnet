@@ -12,7 +12,7 @@ from synset import *
 from image_processing import image_preprocessing
 
 FLAGS = tf.app.flags.FLAGS
-tf.app.flags.DEFINE_string('data_dir', '/home/ryan/data/ILSVRC2012/ILSVRC2012_img_train',
+tf.app.flags.DEFINE_string('data_dir', '/home/larhard/data/ILSVRC2012/ILSVRC2012_img_train',
                            'imagenet dir')
 
 
@@ -32,11 +32,11 @@ def load_data(data_dir):
     data = []
     i = 0
 
-    print "listing files in", data_dir
+    print("listing files in %s" % data_dir)
     start_time = time.time()
     files = file_list(data_dir)
     duration = time.time() - start_time
-    print "took %f sec" % duration
+    print("took %f sec" % duration)
 
     for img_fn in files:
         ext = os.path.splitext(img_fn)[1]
